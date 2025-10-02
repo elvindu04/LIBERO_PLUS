@@ -12,13 +12,18 @@ MU_DICT = {}
 SCENE_DICT = {}
 
 
-def register_mu(scene_type="general"):
+def register_mu(scene_type="general", name_override=None):
     def _func(target_class):
         """For reusing initial conditions easily, we register each pre-defined initial conditions in a dictionary."""
+        cls_name = name_override if name_override else target_class.__name__
         key = "_".join(
-            re.sub(r"([A-Z])", r" \1", target_class.__name__).split()
+            re.sub(r"([A-Z])", r" \1", cls_name).split()
         ).lower()
+        # key = "_".join(
+        #     re.sub(r"([A-Z])", r" \1", target_class.__name__).split()
+        # ).lower()
         MU_DICT[key.lower()] = target_class
+        print(MU_DICT)
         if scene_type not in SCENE_DICT:
             SCENE_DICT[scene_type.lower()] = []
         SCENE_DICT[scene_type.lower()].append(target_class)

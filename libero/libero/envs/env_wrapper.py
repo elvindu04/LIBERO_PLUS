@@ -147,6 +147,9 @@ class ControlEnv:
     def close(self):
         self.env.close()
         del self.env
+    
+    def get_init_state(self):
+        return self.env.sim.get_state().flatten()
 
 
 class OffScreenRenderEnv(ControlEnv):
