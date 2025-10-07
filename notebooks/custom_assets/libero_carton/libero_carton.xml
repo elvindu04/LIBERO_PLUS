@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<mujoco model="carton">
+  <asset>
+    <mesh file="libero_carton.obj" name="carton_mesh" scale="0.01 0.01 0.01"/>
+    <texture file="material_0.png" type="2d" name="tex-carton"/>
+    <material name="carton" texture="tex-carton" texuniform="true"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom pos="0 0 0" euler="90 0 0" material="carton" mesh="carton_mesh" type="mesh" group="1" contype="0" conaffinity="0"/>
+        <inertial pos="0 0 0" mass="0.9878501347949259" diaginertia="0.0005 0.0005 0.0005"/>
+      </body>
+      <site pos="0 0 -0.10084312351278453" rgba="0 0 0 0" size="0.005" name="bottom_site"/>
+      <site pos="0 0 0.11252786724038931" rgba="0 0 0 0" size="0.005" name="top_site"/>
+      <site pos="0.034999999967583385 0.034868879705257275 0" rgba="0 0 0 0" size="0.005" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>

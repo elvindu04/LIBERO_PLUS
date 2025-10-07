@@ -110,18 +110,22 @@ class InitialSceneTemplates:
         target_name=None,
         region_half_len=0.02,
         yaw_rotation=(0.0, 0.0),
+        region_half_width=None,
     ):
         """This is a function that creates a default region with rectangular shape."""
         if target_name is None:
             target_name = self.workspace_name
+
+        if not region_half_width:
+            region_half_width = region_half_len
         region_key_value = {
             region_name: {
                 "target": target_name,
-                "ranges": [
+                "ranges": [ # (x_min, y_min, x_max, y_max)
                     (
-                        region_centroid_xy[0] - region_half_len,
+                        region_centroid_xy[0] - region_half_width,
                         region_centroid_xy[1] - region_half_len,
-                        region_centroid_xy[0] + region_half_len,
+                        region_centroid_xy[0] + region_half_width,
                         region_centroid_xy[1] + region_half_len,
                     )
                 ],

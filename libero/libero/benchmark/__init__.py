@@ -59,7 +59,10 @@ libero_suites = [
     "libero_goal",
     "libero_90",
     "libero_10",
+    "libero_10_diff_obj"
 ]
+
+
 task_maps = {}
 max_len = 0
 for libero_suite in libero_suites:
@@ -218,3 +221,18 @@ class LIBERO_100(Benchmark):
         super().__init__(task_order_index=task_order_index)
         self.name = "libero_100"
         self._make_benchmark()
+
+@register_benchmark
+class LIBERO_10_diff_obj(Benchmark):
+    def __init__(self, task_order_index=0):
+        super().__init__(task_order_index=task_order_index)
+        self.name = "libero_10_diff_obj"
+        self._make_benchmark() 
+    
+    def _make_benchmark(self):
+        tasks = list(task_maps[self.name].values())
+        self.tasks = tasks
+        # not using task orders as of now (we want to be able to control the curriculum, but do this later )
+        # print(f"[info] using task orders {task_orders[self.task_order_index]}")
+        # self.tasks = [tasks[i] for i in task_orders[self.task_order_index]]
+        self.n_tasks = len(self.tasks)
