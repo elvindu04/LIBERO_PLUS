@@ -1,6 +1,6 @@
 (define (problem LIBERO_Living_Room_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language put the red coffee mug on the left plate and the white yellow mug on the right plate)
+  (:language put the white yellow mug on the right plate and the porcelain mug on the left plate)
     (:regions
       (plate_1_init_region
           (:target living_room_table)
@@ -95,7 +95,7 @@
   )
 
   (:obj_of_interest
-    red_coffee_mug_1
+    porcelain_mug_1
     white_yellow_mug_1
   )
 
@@ -110,7 +110,7 @@
   )
 
   (:goal
-    (And (On red_coffee_mug_1 plate_1) (On white_yellow_mug_1 plate_2))
+    (And (On porcelain_mug_1 plate_1) (On white_yellow_mug_1 plate_2))
   )
 
 )
