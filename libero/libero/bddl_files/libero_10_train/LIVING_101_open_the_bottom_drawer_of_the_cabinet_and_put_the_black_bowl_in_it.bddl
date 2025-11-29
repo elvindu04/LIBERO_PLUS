@@ -16,7 +16,7 @@
       (akita_black_bowl_init_region
           (:target living_room_table)
           (:ranges (
-              (0 0.1 0.15 0.3)
+              (0.05 0.1 0.15 0.3)
             )
           )
           (:yaw_rotation (

@@ -16,7 +16,7 @@
       (white_yellow_mug_init_region
           (:target study_table)
           (:ranges (
-              (-0.2 -0.3 -0.13 -0.1)
+              (-0.2 -0.3 -0.15 -0.1)
             )
           )
           (:yaw_rotation (
@@ -27,7 +27,7 @@
       (porcelain_mug_init_region
           (:target study_table)
           (:ranges (
-              (-0.04 -0.3 0.04 -0.1)
+              (-0.04 -0.3 0.01 -0.1)
             )
           )
           (:yaw_rotation (

@@ -1,10 +1,9 @@
 import os
 from pprint import pprint
 
-task_suite = "custom_eval_easy"
-task_suite = "libero_10_random"
+task_suite = "libero_10_train"
 
-path = os.path.join("/home/leisongao/LIBERO/libero/libero/bddl_files/", task_suite)
+path = os.path.join("/home/whu/LIBERO_PLUS/libero/libero/bddl_files/", task_suite)
 
 files = os.listdir(path)
 out = []
